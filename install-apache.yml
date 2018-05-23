@@ -3,7 +3,7 @@
   tasks:
     - name: "Install apache package"
       apt:
-        name: "apache2
+        name: "apache2"
         state: "present"
     - name: "Start apache service"
       service:
