@@ -1,0 +1,14 @@
+- name: "Upgrade & Clean Linux Debian Based System"
+  hosts: linux_debian_based
+  tasks:
+    - name: "apt-get update"
+      apt:
+        update_cache: yes
+    - name: "apt-get -y dist-upgrade"
+      apt:
+        upgrade: dist
+        force: yes
+    - name: "apt autoremove"
+      apt:
+        autoremove: yes
+
