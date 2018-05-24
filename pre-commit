@@ -1,0 +1,4 @@
+for fic in *yml
+do
+  ansible-lint $fic || exit 1
+done
