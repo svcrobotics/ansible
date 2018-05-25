@@ -1,5 +1,5 @@
-- name: "Upgrade & Clean Linux System"
-  hosts: linux-debian-based
+- name: "Upgrade & Clean Linux Debian Based System"
+  hosts: "linux-debian-based"
   tasks:
     - name: "apt-get update"
       apt:
@@ -11,10 +11,11 @@
     - name: "apt autoremove"
       apt:
         autoremove: yes
-  hosts: linux-redhat-based
+- name: "Upgrade Linux RedHat Based System"
+  hosts: "linux-redhat-based"
   tasks:
     - name: "upgrade all packages"
       yum:
         name: "*"
-        state: latest
+        state: present
 

@@ -1,12 +1,25 @@
+[ansible-laptop]
+kali ansible_user=root
+
 [apache]
 rec-apache-1 ansible_user=victor ansible_port=2222
 
 [mysql]
 rec-mysql-1 ansible_user=victor ansible_port=2223
 
-[linux_debian_based:children]
+[linux-debian-based:children]
 apache
 mysql
+ansible-laptop
+
+[linux-redhat-based]
+centos7 ansible_user=root ansible_port=2224
+
+[linux:children]
+apache
+mysql
+ansible-laptop
+linux-redhat-based
 
 [active-directory]
 active-directory-1 ansible_connection=winrm ansible_user=Administrator ansible_winrm_server_cert_validation=ignore ansible_port=2224
