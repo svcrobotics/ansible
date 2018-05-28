@@ -1,0 +1,9 @@
+- name: "Retrieve facts and store them locally"
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: "Create directory for each machine"
+      file:
+        path: "{{playbook_dir}}/{{inventory_hostname}}"
+        state: "directory"
+      delegate_to: localhost

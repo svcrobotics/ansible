@@ -1,5 +1,5 @@
 - name: "Apache Installation"
-  hosts: all
+  hosts: rec-apache-1
   tasks:
     - name: "Install apache package"
       apt:
