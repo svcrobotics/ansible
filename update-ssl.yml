@@ -1,0 +1,8 @@
+- name: "Update SSL on CentOS-7 machines"
+  hosts: "CentOS-7"
+  gather_facts: no
+  tasks:
+    - yum:
+        name: "openssl"
+        update_cache: yes
+        state: "latest"

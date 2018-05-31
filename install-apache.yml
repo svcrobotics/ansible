@@ -1,20 +1,19 @@
 - name: "Apache Installation"
-  hosts: rec-apache-1
+  hosts: Debian01
+  become: yes
   tasks:
     - name: "Install apache package"
       apt:
         name: "apache2"
         state: "present"
+    - name: "Apache configuration"
+      template:
+        src: "inventory.conf.j2"
+        dest: "/etc/apache2/conf-available/inventory.conf"
+        owner: "www-data"
+        group: "www-data"
     - name: "Start apache service"
       service:
         name: "apache2"
-        state: "started"
+        state: "restarted"
         enabled: yes
-    - name: "Copy test.html"
-      copy:
-        src: "test.html"
-        dest: "/var/www/html"
-        owner: "www-data"
-        group: "www-data"
-
-

@@ -1,0 +1,5 @@
+[container]
+centos/systemd
+
+[container:vars]
+ansible_connection=docker

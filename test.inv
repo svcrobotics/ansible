@@ -1,0 +1,10 @@
+[apache]
+rec-apache-1 ansible_user=victor ansible_port=2222
+
+[mysql]
+rec-mysql-1 ansible_user=victor ansible_port=2223
+
+[linux:children]
+apache
+mysql
+

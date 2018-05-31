@@ -1,5 +1,16 @@
+- name: "Retrieve facts and store them locally"
+  hosts: linux
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: "Create directory for each machine"
+      file:
+        path: "{{playbook_dir}}/{{inventory_hostname}}"
+        state: "directory"
+      delegate_to: localhost
 - name: "Generate html file for each host"
   hosts: linux
+  become: yes
   gather_facts: yes
   tasks:
     - name: "html file generation"
@@ -7,3 +18,4 @@
         src: "machine.html.j2"
         dest: "{{playbook_dir}}/{{inventory_hostname}}/{{inventory_hostname}}.html"
       delegate_to: localhost
+

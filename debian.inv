@@ -1,0 +1,8 @@
+[linux]
+Debian01 ansible_user=victor ansible_port=2223
+Debian02 ansible_user=victor ansible_port=2222
+Debian03 ansible_user=victor 
+centos7 ansible_user=root ansible_port=2224
+kali ansible_user=root
+
+

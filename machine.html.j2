@@ -7,7 +7,7 @@
     <p>Ci-dessous la liste de ces addresses:</p>
     <ul>
 	{% for ip in ansible_all_ipv4_addresses -%}
-          {{ip}}
+          <li>{{ip}}</li>
         {%- endfor %}
     </ul>
   </body>
